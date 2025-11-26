@@ -91,7 +91,9 @@ typedef enum _meshtastic_TelemetrySensorType {
     /* MAX17261 lipo battery gauge */
     meshtastic_TelemetrySensorType_MAX17261 = 38,
     /* PCT2075 Temperature Sensor */
-    meshtastic_TelemetrySensorType_PCT2075 = 39
+    meshtastic_TelemetrySensorType_PCT2075 = 39,
+    /* DS18B20 temperature sensor*/
+    meshtastic_TelemetrySensorType_DS18B20 = 40
 } meshtastic_TelemetrySensorType;
 
 /* Struct definitions */

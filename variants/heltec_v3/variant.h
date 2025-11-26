@@ -40,3 +40,5 @@
 
 #define SX126X_DIO2_AS_RF_SWITCH
 #define SX126X_DIO3_TCXO_VOLTAGE 1.8
+
+#define PIN_WIRE_DS18B20 46  // add ds18b20 sensor

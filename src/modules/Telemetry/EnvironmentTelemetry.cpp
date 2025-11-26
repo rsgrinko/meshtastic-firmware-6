@@ -171,6 +171,13 @@ PCT2075Sensor pct2075Sensor;
 NullSensor pct2075Sensor;
 #endif
 
+#if __has_include(<Adafruit_PCT2075.h>)
+#include "Sensor/DS18B20Sensor.h"
+DS18B20Sensor ds18b20Sensor;
+#else
+NullSensor ds18b20Sensor;
+#endif
+
 RCWL9620Sensor rcwl9620Sensor;
 CGRadSensSensor cgRadSens;
 #endif
@@ -280,6 +287,8 @@ int32_t EnvironmentTelemetryModule::runOnce()
                 result = max17048Sensor.runOnce();
             if (cgRadSens.hasSensor())
                 result = cgRadSens.runOnce();
+            if (ds18b20Sensor.hasSensor())
+                result = ds18b20Sensor.runOnce();
             if (pct2075Sensor.hasSensor())
                 result = pct2075Sensor.runOnce();
                 // this only works on the wismesh hub with the solar option. This is not an I2C sensor, so we don't need the
